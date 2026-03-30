@@ -218,7 +218,8 @@ nav {
   -webkit-mask-image: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(255,255,255,0.95) 35%, rgba(255,255,255,0.4) 65%, rgba(255,255,255,0) 100%);
 }
 
-.project-entry:hover .project-bg {
+.project-entry:hover .project-bg,
+.project-entry:active .project-bg {
   opacity: 0.35;
 }
 
