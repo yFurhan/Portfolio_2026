@@ -85,7 +85,7 @@
         }
 
         void main() {
-          vec2 screenUv = gl_FragCoord.xy / resolution;
+          vec2 screenUv = vec2(gl_FragCoord.x / resolution.x, 1.0 - gl_FragCoord.y / resolution.y);
           vec2 uv = coverUv(screenUv);
 
           vec2 gridUvCenter = (floor(uv * gridSize) + 0.5) / gridSize;
@@ -106,7 +106,7 @@
 
     document.addEventListener('mousemove', (e) => {
       mouse.x = e.clientX / window.innerWidth;
-      mouse.y = 1 - e.clientY / window.innerHeight;
+      mouse.y = e.clientY / window.innerHeight;
       isOver = true;
     });
 
@@ -132,8 +132,8 @@
         const iy = prevMouse.y + (mouse.y - prevMouse.y) * t;
 
         const px = ix * TRAIL_SIZE;
-        const py = (1 - iy) * TRAIL_SIZE;
-        const radius = CONFIG.trailSize * TRAIL_SIZE;
+        const py = iy * TRAIL_SIZE;
+        const radius = CONFIG.trailSize * TRAIL_SIZE * 0.5;
 
         const grad = ctx.createRadialGradient(px, py, 0, px, py, radius);
         grad.addColorStop(0, 'rgba(255,255,255,1)');
