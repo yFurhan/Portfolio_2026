@@ -219,7 +219,7 @@ nav {
 }
 
 .project-entry:hover .project-bg,
-.project-entry:active .project-bg {
+.project-entry.touched .project-bg {
   opacity: 0.35;
 }
 

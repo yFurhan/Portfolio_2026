@@ -188,6 +188,19 @@
 
   // project click disabled for now
 
+  // Mobile touch — show bg image on press
+  document.querySelectorAll('.project-entry').forEach(entry => {
+    entry.addEventListener('touchstart', () => {
+      entry.classList.add('touched');
+    }, { passive: true });
+    entry.addEventListener('touchend', () => {
+      setTimeout(() => entry.classList.remove('touched'), 400);
+    }, { passive: true });
+    entry.addEventListener('touchcancel', () => {
+      entry.classList.remove('touched');
+    }, { passive: true });
+  });
+
   bookClose.addEventListener('click', closeBook);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeBook();
