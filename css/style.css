@@ -27,14 +27,6 @@ html {
 }
 
 /* Leaf Canvas */
-/* Pixel Trail */
-#pixel-trail-canvas {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
 #leaves-canvas {
   position: fixed;
   top: 0;
