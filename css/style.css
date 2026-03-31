@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  font-family: 'Radio Canada', sans-serif;
+  font-family: -apple-system, 'SF Pro Display', 'SF Pro Text', BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 400;
   min-height: 100vh;
   padding: 1rem 0 0.5rem;
